@@ -12,6 +12,15 @@ Follow these steps to set up the project and run it seamlessly:
 
 ### **1. Create and Activate the Conda Environment**
 ```bash
+#install conda or miniconda with python3.9 to get rid of compatability problems
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+chmod +x Miniconda3-py39_4.12.0-Linux-x86_64.sh
+bash Miniconda3-py39_4.12.0-Linux-x86_64.sh
+# insatallion path in my machine is /FLearning/miniconda3, therefore add bin folder to environment PATH variable
+export PATH=/FLearning/miniconda3/bin/:$PATH
+conda init
+source ~/.bashrc 
+
 conda env create -f environment.yml
 conda activate my_env
 ```
