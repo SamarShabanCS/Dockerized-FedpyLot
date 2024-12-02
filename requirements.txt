@@ -1,0 +1,5 @@
+#For packages not installed via Conda, Use: pip install requirements.txt:
+
+thop
+opencv-python
+nuscenes-devkit
