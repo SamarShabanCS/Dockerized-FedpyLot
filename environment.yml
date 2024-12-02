@@ -23,7 +23,3 @@ dependencies:
   - protobuf
   - ipython
   - pip
-  - pip:
-      - thop
-      - opencv-python
-      - nuscenes-devkit
