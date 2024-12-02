@@ -10,7 +10,7 @@ fi
 NUM_CONTAINERS=$1
 
 # Define the Docker image to use
-DOCKER_IMAGE="fl_mpi_cluster_base:latest" # Replace with your desired image
+DOCKER_IMAGE="fl_mpi_cluster_base_image:latest" # Replace with your desired image
 
 # Loop to create the specified number of containers
 for ((i = 1; i <= NUM_CONTAINERS; i++)); do
