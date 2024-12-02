@@ -1,2 +1,2 @@
 # Dockerized-FedpyLot
-FedPyLot, originally designed for physical MPI clusters, was containerized using Docker. This enhanced portability, scalability, and simplified deployment. Dockerization also allows for better simulation of diverse resource environments in federated learning.
+This original project, FedPyLot, was initially designed to run on a physical MPI cluster. By containerizing the project using Docker, we've enhanced its portability and scalability. The Dockerized application can now be deployed on various platforms without requiring significant modifications. This approach simplifies the deployment process and enables efficient resource utilization, as well as better simulation of heterogeneous resource environments in federated learning settings.
