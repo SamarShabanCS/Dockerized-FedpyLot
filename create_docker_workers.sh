@@ -18,7 +18,7 @@ for ((i = 1; i <= NUM_CONTAINERS; i++)); do
     echo "Creating container: $CONTAINER_NAME"
 
     # Create and start the container
-    docker run --name "$CONTAINER_NAME" --mount type=bind,source=/shared_mnt/AnacondaInstallation/envs/my_pytorch_env,target=/fedpylot/ -dit "$DOCKER_IMAGE"
+    docker run --name "$CONTAINER_NAME" --shm-size=2g --mount type=bind,source=/shared_mnt/FLearning/,target=/FLearning/ -dit "$DOCKER_IMAGE"
     
     # Check if the container was created successfully
     if [ $? -eq 0 ]; then
