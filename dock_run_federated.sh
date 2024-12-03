@@ -42,7 +42,7 @@ CURRENT_DIR=$start_path
 #export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 #srun --cpus-per-task=$SLURM_CPUS_PER_TASK 
 #mpiexec --allow-run-as-root -n 3 -machinefile ~/machinefile python -m mpi4py federated/scatter_data.py --dataset nuimages10
-mpiexec --allow-run-as-root -n 3 -machinefile ~/machinefile python -m mpi4py federated/scatter_data.py --cPATH $CURRENT_DIR --dataset nuimages10
+mpiexec --allow-run-as-root -n 11 -machinefile ~/machinefile python -m mpi4py federated/scatter_data.py --cPATH $CURRENT_DIR --dataset nuimages10
 
 # Move to local storage
 #cd $SLURM_TMPDIR/fedpylot
@@ -60,7 +60,7 @@ bash weights/get_weights.sh yolov7
 #export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 #srun --cpus-per-task=$SLURM_CPUS_PER_TASK python federated/main.py \ #mpiexec
 echo "Current directory after downloading pretrained weights: $(pwd)"
-mpiexec  -n 3 --allow-run-as-root  -machinefile ~/machinefile python -m mpi4py federated/main.py \
+mpiexec  -n 11 --allow-run-as-root  -machinefile ~/machinefile python -m mpi4py federated/main.py \
     --nrounds 2 \
     --epochs 2 \
     --server-opt fedavgm \
@@ -76,7 +76,7 @@ mpiexec  -n 3 --allow-run-as-root  -machinefile ~/machinefile python -m mpi4py f
     --iou 0.65 \
     --cfg yolov7/cfg/training/yolov7.yaml \
     --hyp data/hyps/hyp.scratch.clientopt.nuimages.yaml \
-    --workers 2
+    --workers 8
 
 # Backup experiment results to network storage
 cp -r ./experiments $saving_path
