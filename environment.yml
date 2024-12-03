@@ -4,6 +4,7 @@ channels:
   - pytorch
 dependencies:
   - python=3.9
+  - openmpi
   - mpi4py
   - tensorboard
   - matplotlib
